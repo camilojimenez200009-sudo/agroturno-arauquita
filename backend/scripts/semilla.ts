@@ -12,12 +12,12 @@ if (!contrasena || contrasena.length < 10) {
   process.exit(1);
 }
 
-// Datos completamente ficticios. Veredas tomadas del diagnóstico (Tabla 36 del documento maestro).
+// Personas y ubicaciones inventadas para pruebas. Veredas tomadas del diagnóstico (Tabla 36 del documento maestro).
 const CUENTAS = [
   { nombre: 'Administración AgroTurno', correo: 'admin@agroturno.test', rol: 'ADMINISTRADOR' },
   { nombre: 'Coordinación de prueba', correo: 'coordinador@agroturno.test', rol: 'COORDINADOR' },
-  { nombre: 'Productor A (ficticio)', correo: 'productor.a@agroturno.test', rol: 'PRODUCTOR', vereda: 'Vereda La Reinera' },
-  { nombre: 'Productor B (ficticio)', correo: 'productor.b@agroturno.test', rol: 'PRODUCTOR', vereda: 'Vereda El Troncal' },
+  { nombre: 'Luis Alberto Mendoza', correo: 'productor.a@agroturno.test', rol: 'PRODUCTOR', vereda: 'Vereda La Reinera' },
+  { nombre: 'Marta Cecilia Rojas', correo: 'productor.b@agroturno.test', rol: 'PRODUCTOR', vereda: 'Vereda El Troncal' },
 ] as const;
 
 // Productos más frecuentes en el diagnóstico (Tabla 34): plátano, cacao, yuca y maíz
@@ -64,9 +64,9 @@ async function main() {
       }
       const hoy = hoyEnBogota();
       const ejemplos = [
-        { correo: 'productor.a@agroturno.test', producto: 'Plátano', cantidad: 45, unidad: 'racimos', ubicacion: 'Vereda La Reinera, punto de acopio junto a la escuela (dato ficticio)', dias: 2 },
-        { correo: 'productor.a@agroturno.test', producto: 'Cacao', cantidad: 120, unidad: 'kilogramos', ubicacion: 'Vereda La Reinera, finca de prueba, entrada por el puente (dato ficticio)', dias: 4 },
-        { correo: 'productor.b@agroturno.test', producto: 'Yuca', cantidad: 18, unidad: 'bultos', ubicacion: 'Vereda El Troncal, kilómetro 3 sobre la vía principal (dato ficticio)', dias: 3 },
+        { correo: 'productor.a@agroturno.test', producto: 'Plátano', cantidad: 45, unidad: 'racimos', ubicacion: 'Vereda La Reinera, punto de acopio junto a la escuela', dias: 2 },
+        { correo: 'productor.a@agroturno.test', producto: 'Cacao', cantidad: 120, unidad: 'kilogramos', ubicacion: 'Vereda La Reinera, finca de prueba, entrada por el puente', dias: 4 },
+        { correo: 'productor.b@agroturno.test', producto: 'Yuca', cantidad: 18, unidad: 'bultos', ubicacion: 'Vereda El Troncal, kilómetro 3 sobre la vía principal', dias: 3 },
       ];
       for (const e of ejemplos) {
         const { rows } = await db.query<{ id: string; usuario_id: string; productor_id: string; producto_id: string }>(

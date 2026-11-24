@@ -113,6 +113,8 @@ npm --workspace backend run db:semilla -- --ejemplos # opcional: 3 solicitudes d
 
 La semilla crea `admin@agroturno.test`, `coordinador@agroturno.test`, `productor.a@agroturno.test` y `productor.b@agroturno.test` con la contraseña definida en `SEMILLA_CONTRASENA`.
 
+**Datos de demostración (opcional).** Para probar todos los casos, cargue [`backend/db/datos-demo.sql`](backend/db/datos-demo.sql) con el propietario de la base (`psql "$DATABASE_URL_ADMIN" -f backend/db/datos-demo.sql`). Agrega 20 solicitudes en los cuatro estados (6 pendientes, 5 programadas, 4 en proceso y 5 completadas), con transporte, reprogramaciones con motivo, ediciones e historial; cinco productores más (`productor.c` a `productor.g@agroturno.test`), un segundo coordinador (`coordinador2@agroturno.test`), una cuenta desactivada (`inactivo@agroturno.test`) y un producto inactivo. Las cuentas nuevas usan la misma contraseña que el administrador. Personas, ubicaciones y teléfonos son inventados.
+
 **4. Ejecutar** (dos terminales):
 
 ```bash
