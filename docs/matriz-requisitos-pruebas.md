@@ -34,7 +34,7 @@ Traza de cada requisito funcional hasta el código y la prueba que lo comprueba.
 
 | Prueba | Enfoque | Dónde |
 |---|---|---|
-| T13 | Compatibilidad: dos tamaños de pantalla | Proyectos Playwright `escritorio` (1366×860) y `movil` (Pixel 7). Segundo navegador: verificación manual pendiente, ver [validacion-trl5.md](validacion-trl5.md). |
+| T13 | Compatibilidad: navegadores y tamaños | Proyectos Playwright `escritorio` y `movil` (Chromium), `firefox` y `safari-iphone` (WebKit). Ver [validacion-trl5.md](validacion-trl5.md). |
 | T14 | Conectividad | `frontend/tests/e2e/conectividad.spec.ts` |
 | T15 | Rendimiento (meta 3 s) | `backend/tests/t15-t18…` con 500 solicitudes adicionales |
 | T16 | Respaldo y restauración | `scripts/respaldo.sh`, `scripts/restaurar.sh` |

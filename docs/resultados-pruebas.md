@@ -11,7 +11,7 @@ Resultados **reales** de la ejecución automatizada. Se regeneran ejecutando `np
 | Sistema | Linux x86_64 |
 | Node.js / npm | 22.23.5 / 10.9.9 |
 | PostgreSQL (pruebas locales) | 16.15 |
-| Navegador e2e | Google Chrome 153 (escritorio 1366×860 y emulación móvil Pixel 7) |
+| Navegadores e2e | Google Chrome 153 (escritorio y emulación Pixel 7), Firefox (Playwright 1.65, Gecko) y WebKit (Playwright 1.65, emulación iPhone 13) |
 | Datos | Cuentas, productos y solicitudes ficticias |
 | Responsable | Equipo del proyecto AgroTurno Arauquita |
 
@@ -20,7 +20,8 @@ Resultados **reales** de la ejecución automatizada. Se regeneran ejecutando `np
 | Conjunto | Total | Aprobadas | Fallidas |
 |---|---|---|---|
 | API (Vitest + Supertest) | 53 | 53 | 0 |
-| Extremo a extremo (Playwright) | 26 | 26 | 0 |
+| Extremo a extremo (Playwright) · Chromium escritorio y móvil | 26 | 26 | 0 |
+| Extremo a extremo (Playwright) · Firefox escritorio y Safari iPhone (T13) | 26 | 26 | 0 |
 | Respaldo y restauración (T16) | 1 | 1 | 0 |
 
 ## Mediciones
@@ -154,6 +155,6 @@ El recorrido dejó en producción la solicitud ficticia `AT-00001` (completada),
 
 ## Limitaciones de esta ejecución
 
-- T13 se ejecutó con un solo motor de navegador (Chromium) en dos tamaños de pantalla. La verificación en un segundo navegador (Firefox o Safari) queda como prueba manual en el protocolo de validación.
+- T13: Firefox no pudo abrir el sitio publicado desde el entorno de pruebas por el certificado del proxy de salida; en local pasó las 13 pruebas. Safari (WebKit) pasó en local y en el sitio publicado. Detalle en [validacion-trl5.md](validacion-trl5.md).
 - El límite de intentos de inicio de sesión se desactiva en las pruebas automatizadas para no interferir con ellas; se verifica manualmente.
 - La revisión de accesibilidad con axe detecta problemas automáticos; no sustituye una prueba con lector de pantalla.

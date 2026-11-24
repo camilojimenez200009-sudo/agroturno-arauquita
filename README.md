@@ -127,9 +127,11 @@ Comprobación rápida: `curl http://localhost:3000/api/health` → `{"estado":"o
 | Comando | Qué ejecuta |
 |---|---|
 | `npm test` | 53 pruebas de API (Vitest + Supertest): T01–T12, T15 y T18. Usan una base aislada `agroturno_test` que se recrea en cada ejecución. |
-| `npm run test:e2e` | 13 pruebas de extremo a extremo (Playwright) × 2 dispositivos (escritorio y móvil): recorrido completo, acceso denegado, conectividad (T14) y accesibilidad con axe (T17). |
+| `npm run test:e2e` | 13 pruebas de extremo a extremo (Playwright) en 4 configuraciones: Chromium escritorio y Android, Firefox escritorio y Safari iPhone. Recorrido completo, acceso denegado, conectividad (T14), compatibilidad (T13) y accesibilidad con axe (T17). |
 | `npm run typecheck` | Verificación de tipos de backend y frontend. |
 | `scripts/respaldo.sh` y `scripts/restaurar.sh` | Respaldo y restauración verificada por conteos (T16). |
+
+Navegadores de prueba: `npx --prefix frontend playwright install chromium firefox webkit`.
 
 Variables para las pruebas: `TEST_DATABASE_URL`, `TEST_DATABASE_URL_ADMIN` (deben apuntar a una base cuyo nombre termine en `_test`), `E2E_CONTRASENA` y, si no tiene los navegadores de Playwright, `CHROME_PATH`.
 
@@ -177,6 +179,7 @@ Más capturas del sitio publicado en [docs/capturas](docs/capturas).
 - [Matriz requisito → pantalla → API → prueba](docs/matriz-requisitos-pruebas.md)
 - [Resultados de pruebas](docs/resultados-pruebas.md)
 - [Validación TRL 5: protocolo y estado](docs/validacion-trl5.md)
+- [Sesión con participantes: guion, tareas y SUS](docs/sesion-participantes.md)
 - [Manual breve de uso](docs/manual-usuario.md)
 - [Despliegue](docs/despliegue.md)
 - [Bitácora de cambios](docs/bitacora.md)
