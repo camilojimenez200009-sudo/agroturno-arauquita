@@ -37,6 +37,24 @@ Los tiempos son de la API local. En el entorno publicado se suman la latencia de
 
 **T16 · Respaldo y restauración:** `scripts/respaldo.sh` generó un respaldo con 9 tablas con datos; `scripts/restaurar.sh` lo restauró en una base distinta y los conteos coincidieron (usuarios 4, productos 4, solicitudes 16, programaciones 6, historial 35).
 
+## Verificación en el entorno publicado
+
+Ejecutada el 23 de noviembre de 2026 contra https://agroturno-arauquita.vercel.app (Vercel + Supabase PostgreSQL 17, us-east-2), con cuentas ficticias.
+
+| Verificación | Resultado |
+|---|---|
+| `/api/health` | `{"estado":"ok","base_de_datos":"ok"}` |
+| Recorrido completo e2e (registro → programación → en proceso → completada → historial) | Aprobado (escritorio) |
+| Acceso denegado a productor en Usuarios | Aprobado |
+| Accesibilidad (axe) y teclado, escritorio y móvil | 16 de 16 aprobadas |
+| Tiempos de respuesta de la API (3 muestras): listado de 20 / resumen / health | 0,19–0,49 s / 0,17–0,27 s / 0,19–0,24 s |
+| Cookie de sesión | `HttpOnly; Secure; SameSite=Lax` |
+| Cabeceras | HSTS, CSP, `nosniff`, `Cache-Control: no-store` |
+| Petición de escritura sin cabecera anti-CSRF | Rechazada (403) |
+| Acceso a las tablas por la API pública de Supabase | Sin acceso (esquema no expuesto) |
+
+El recorrido dejó en producción la solicitud ficticia `AT-00001` (completada), visible en el tablero.
+
 ## Detalle · API
 
 | Grupo | Caso | Resultado | ms |

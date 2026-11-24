@@ -6,7 +6,7 @@ TRL 5 significa **validar los componentes en un entorno relevante** para el uso 
 
 | Elemento | Definición para AgroTurno |
 |---|---|
-| Despliegue | Aplicación publicada en Vercel (interfaz + API serverless) con PostgreSQL administrado en Supabase, accesible por HTTPS desde cualquier red. |
+| Despliegue | Aplicación publicada en https://agroturno-arauquita.vercel.app (Vercel interfaz + API serverless) con PostgreSQL administrado en Supabase, accesible por HTTPS desde cualquier red. |
 | Dispositivos | Teléfono Android de gama media y computador de escritorio o portátil. |
 | Navegadores | Chrome en Android y en escritorio; un segundo navegador (Firefox o Edge). |
 | Conectividad | Red real del evaluador y red simulada lenta o desconectada (DevTools: *Slow 4G* y *Offline*), coherente con el diagnóstico P20: 22 de 30 participantes sin conectividad consistentemente estable. |

@@ -9,6 +9,7 @@ Registro de los incrementos según el plan de la guía técnica (capítulo 22). 
 | 2026-11-23 | 1–4. Interfaz | Pantallas P01 a P10, identidad visual, diseño adaptable y mapa opcional. | `2359244` |
 | 2026-11-23 | 5. Validación técnica | 53 pruebas de API, 26 de extremo a extremo, respaldo/restauración; dos defectos corregidos. | `bf4bc14` |
 | 2026-11-23 | 5. Despliegue | Configuración de Vercel; base en Supabase con permisos mínimos. | `fdf740c` |
+| 2026-11-23 | 5. Publicación | Sitio publicado en https://agroturno-arauquita.vercel.app y verificado (recorrido, accesibilidad, seguridad). | este commit |
 
 ## Pendientes
 

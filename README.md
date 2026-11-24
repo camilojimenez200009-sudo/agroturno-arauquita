@@ -11,7 +11,8 @@ Formulador: **Jhon Camilo Jiménez Meza**.
 
 | | |
 |---|---|
-| Aplicación publicada | _(se completa al finalizar el despliegue)_ |
+| Aplicación publicada | **https://agroturno-arauquita.vercel.app** |
+| Estado de la API | https://agroturno-arauquita.vercel.app/api/health |
 | Estado | Prototipo funcional con pruebas automatizadas. Validación con usuarios en entorno relevante: ver [docs/validacion-trl5.md](docs/validacion-trl5.md). |
 | Datos | Únicamente datos ficticios. |
 
@@ -160,6 +161,14 @@ agroturno-arauquita/
 ├── scripts/                     # Respaldo y restauración
 └── vercel.json
 ```
+
+## Capturas
+
+| Tablero de coordinación | Detalle con historial (móvil) |
+|---|---|
+| ![Tablero de coordinación](docs/capturas/esc-05-inicio-coordinador.png) | ![Detalle en móvil](docs/capturas/movil-04-detalle-productor.png) |
+
+Más capturas del sitio publicado en [docs/capturas](docs/capturas).
 
 ## Documentación
 
