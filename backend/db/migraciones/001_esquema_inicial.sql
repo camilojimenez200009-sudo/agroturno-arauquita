@@ -144,7 +144,7 @@ CREATE TABLE historial_solicitudes (
 );
 CREATE INDEX historial_solicitud_idx ON historial_solicitudes (solicitud_id, id);
 
-CREATE FUNCTION historial_inmutable() RETURNS trigger LANGUAGE plpgsql AS $$
+CREATE FUNCTION historial_inmutable() RETURNS trigger LANGUAGE plpgsql SET search_path = '' AS $$
 BEGIN
   RAISE EXCEPTION 'El historial de solicitudes no admite modificaciones ni borrados';
 END;
@@ -154,7 +154,7 @@ CREATE TRIGGER historial_sin_cambios
   FOR EACH ROW EXECUTE FUNCTION historial_inmutable();
 
 -- RN-06: las solicitudes no se eliminan físicamente
-CREATE FUNCTION solicitudes_sin_borrado() RETURNS trigger LANGUAGE plpgsql AS $$
+CREATE FUNCTION solicitudes_sin_borrado() RETURNS trigger LANGUAGE plpgsql SET search_path = '' AS $$
 BEGIN
   RAISE EXCEPTION 'Las solicitudes no se eliminan; su estado e historial se conservan';
 END;
