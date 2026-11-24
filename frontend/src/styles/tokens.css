@@ -1,0 +1,53 @@
+/* AgroTurno Arauquita · Tokens de diseño (Guía técnica, capítulos 04 y 05) */
+:root {
+  /* Paleta base */
+  --color-navegacion: #112b47;
+  --color-accion: #2d7621;
+  --color-accion-oscuro: #225b1d;
+  --color-fondo: #f4f7fa;
+  --color-superficie: #ffffff;
+  --color-texto: #173249;
+  --color-texto-secundario: #536578;
+  --color-borde: #d5e0e7;
+  --color-verde-palido: #eaf5e9;
+  --color-error: #b3261e;
+  --color-error-fondo: #fdecea;
+  --color-aviso-fondo: #fff7e0;
+
+  /* Estados de solicitud: fondo / texto */
+  --estado-pendiente-fondo: #fff1ca;
+  --estado-pendiente-texto: #765000;
+  --estado-programada-fondo: #e2eeff;
+  --estado-programada-texto: #124f98;
+  --estado-en-proceso-fondo: #eee8ff;
+  --estado-en-proceso-texto: #593799;
+  --estado-completada-fondo: #e3f4e5;
+  --estado-completada-texto: #24612a;
+
+  /* Tipografía */
+  --fuente: system-ui, 'Segoe UI', Arial, sans-serif;
+  --texto-h1: 1.875rem;
+  --texto-h2: 1.375rem;
+  --texto-cuerpo: 1rem;
+  --texto-etiqueta: 0.875rem;
+  --texto-auxiliar: 0.8125rem;
+  --interlineado: 1.5;
+
+  /* Espaciado (base 4 px) */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-6: 24px;
+  --esp-8: 32px;
+
+  /* Radios */
+  --radio-campo: 6px;
+  --radio-tarjeta: 10px;
+  --radio-contenedor: 16px;
+
+  --sombra-tarjeta: 0 1px 2px rgb(17 43 71 / 6%), 0 2px 8px rgb(17 43 71 / 5%);
+  --altura-tactil: 44px;
+  --ancho-menu: 248px;
+  --foco: 0 0 0 3px rgb(45 118 33 / 45%);
+}
