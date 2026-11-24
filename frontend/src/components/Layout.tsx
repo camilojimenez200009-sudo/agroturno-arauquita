@@ -43,6 +43,8 @@ function useEnLinea() {
   useEffect(() => {
     const on = () => setEnLinea(true);
     const off = () => setEnLinea(false);
+    // Sincroniza por si la red cambió entre el primer render y el registro de eventos
+    setEnLinea(navigator.onLine);
     window.addEventListener('online', on);
     window.addEventListener('offline', off);
     return () => {

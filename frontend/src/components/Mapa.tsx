@@ -2,7 +2,7 @@
 // Si las teselas no cargan, la ubicación textual sigue siendo la referencia válida.
 import 'leaflet/dist/leaflet.css';
 import type { LeafletMouseEvent } from 'leaflet';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CircleMarker, MapContainer, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 
 // Casco urbano de Arauquita (referencia general, no la ubicación de una finca)
@@ -37,9 +37,15 @@ function Recentrar({ posicion }: { posicion: [number, number] | null }) {
 export default function Mapa({ latitud, longitud, editable, onCambiar, alto, onErrorTeselas }: Props) {
   const posicion: [number, number] | null = latitud != null && longitud != null ? [latitud, longitud] : null;
   const [errores, setErrores] = useState(0);
+  const avisado = useRef(false);
 
+  // Varias teselas fallidas indican que el servicio de mapas no está disponible.
+  // Se usa >= porque React puede agrupar varios errores en una sola actualización.
   useEffect(() => {
-    if (errores === 4) onErrorTeselas?.();
+    if (errores >= 3 && !avisado.current) {
+      avisado.current = true;
+      onErrorTeselas?.();
+    }
   }, [errores, onErrorTeselas]);
 
   return (
